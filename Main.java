@@ -33,8 +33,8 @@ final class Main {
                              final int endPeg) {
 
         // This function calculates where the disks should be placed in
-        final int pegNumber = 6;  //Use the sum of the rods (6) to calc new startPeg  and endPeg
-        if (nOfDisks == 1){
+        final int pegNumber = 6;
+        if (nOfDisks == 1) {
             System.out.println("Move disk 1 from peg " + startPeg + " to peg "
                                + endPeg);
         } else {
