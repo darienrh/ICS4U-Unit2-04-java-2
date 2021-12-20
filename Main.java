@@ -29,20 +29,20 @@ final class Main {
     private Main() {
         throw new IllegalStateException("Cannot be instantiated");
     }
-    static void towerOfHanoi(final int nOfDisks, final int STARTPEG,
-                             final int ENDPEG) {
+    static void towerOfHanoi(final int nOfDisks, final int startPeg,
+                             final int endPeg) {
 
         // This function calculates where the disks should be placed in
-        final int PEG_NUMBER = 6;  //Use the sum of the rods (6) to calc new STARTPEG  and ENDPEG
+        final int pegNumber = 6;  //Use the sum of the rods (6) to calc new startPeg  and endPeg
         if (nOfDisks == 1){
-            System.out.println("Move disk 1 from peg " + STARTPEG + " to peg "
-                               + ENDPEG);
+            System.out.println("Move disk 1 from peg " + startPeg + " to peg "
+                               + endPeg);
         } else {
 
-           towerOfHanoi(nOfDisks - 1, STARTPEG, PEG_NUMBER - STARTPEG - ENDPEG);
+           towerOfHanoi(nOfDisks - 1, startPeg, pegNumber - startPeg - endPeg);
            System.out.println("Move disk " + nOfDisks + " from peg "
-                               + STARTPEG + " to peg " + ENDPEG);
-           towerOfHanoi(nOfDisks - 1, PEG_NUMBER - STARTPEG - ENDPEG, ENDPEG);
+                               + startPeg + " to peg " + endPeg);
+           towerOfHanoi(nOfDisks - 1, pegNumber - startPeg - endPeg, endPeg);
         }
     }
     /**
@@ -51,8 +51,8 @@ final class Main {
     * @param args No args will be used
     */
     public static void main(final String[] args) {
-       final int STARTPEG = 1;      //constants changed to capitals
-        final int ENDPEG = 3;
+       final int startPeg = 1;      //constants changed to capitals
+        final int endPeg = 3;
 
         System.out.println("Tower of Hanoi");
 
@@ -65,7 +65,7 @@ final class Main {
             System.out.println();
             if (nOfDisks > 0) {
                 // process
-                towerOfHanoi(nOfDisks, STARTPEG, ENDPEG);
+                towerOfHanoi(nOfDisks, startPeg, endPeg);
             } else {
                 System.out.println("\nPlease enter a positive integer");
             }
